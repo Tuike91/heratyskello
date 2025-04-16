@@ -1,0 +1,5 @@
+requests
+python-socketio
+RPi.GPIO
+websocket-client
+smbus2

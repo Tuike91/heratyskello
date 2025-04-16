@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Herätyskello</title>
+    <style>
+        body { font-family: sans-serif; }
+        label, input { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Aseta herätys</h1>
+    <form method="post" action="/lisaa_heratys">
+        <label>Herätysaika:</label>
+        <input type="time" name="aika" required>
+        <label>Herätysteksti:</label>
+        <input type="text" name="teksti" required>
+        <input type="submit" value="Tallenna herätys">
+    </form>
+
+    {% if heratys %}
+        <h3>Nykyinen herätys:</h3>
+        <p><strong>{{ heratys.aika }}</strong> – {{ heratys.teksti }}</p>
+    {% endif %}
+</body>
+</html>
