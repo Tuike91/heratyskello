@@ -2,24 +2,30 @@
 <html>
 <head>
     <title>Herätyskello</title>
-    <style>
-        body { font-family: sans-serif; }
-        label, input { display: block; margin-top: 10px; }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tyylit.css') }}">
+
 </head>
 <body>
-    <h1>Aseta herätys</h1>
+    <h1 class="otsikko">Aseta herätys</h1>
+    <hr class="viiva"><br><br>
+
     <form method="post" action="/lisaa_heratys">
         <label>Herätysaika:</label>
         <input type="time" name="aika" required>
+        
         <label>Herätysteksti:</label>
-        <input type="text" name="teksti" required>
+        <input type="text" name="teksti" required>     
+        
         <input type="submit" value="Tallenna herätys">
     </form>
-
+    <br>
     {% if heratys %}
+    <div class="heratys">
         <h3>Nykyinen herätys:</h3>
         <p><strong>{{ heratys.aika }}</strong> – {{ heratys.teksti }}</p>
+    </div>
     {% endif %}
+
+    <img src="{{ url_for('static', filename='images/kellokuva.png') }}" alt="Herätyskello" class="kellokuva">
 </body>
 </html>

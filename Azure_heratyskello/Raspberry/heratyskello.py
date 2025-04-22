@@ -39,7 +39,7 @@ def clear_lcd(lcd):
 
 def get_alarm_time():
     try:
-        res = requests.get("https://heratyskello6.azurewebsites.net/hae_heratys")
+        res = requests.get("https://heratyskello7.azurewebsites.net/hae_heratys")
         if res.status_code == 200:
             data = res.json()
             aika = data['aika']
@@ -118,7 +118,7 @@ def heratys_paivittynyt(data):
 
 def main():
     initialize_lcd()  # Alustetaan LCD ennen yhteyden muodostamista
-    sio.connect("https://heratyskello6.azurewebsites.net")  # Yhdistetään Azure WebSocket-palvelimeen
+    sio.connect("https://heratyskello7.azurewebsites.net")  # Yhdistetään Azure WebSocket-palvelimeen
 
     # Tämä pysyy päällä ja odottaa viestejä
     while True:
