@@ -5,7 +5,7 @@ import eventlet
 app = Flask(__name__)
 socketio = SocketIO(app, async_mode='eventlet')
 
-# 🔹 Herätys säilötään tähän sanakirjaan
+# Herätys säilötään tähän sanakirjaan
 heratys = {}
 
 @app.route('/')
@@ -14,7 +14,7 @@ def index():
 
 @app.route('/lisaa_heratys', methods=['POST'])
 def lisaa_heratys():
-    global heratys  # 🔑 TÄMÄ tarvitaan, jotta voidaan muokata globaalia muuttujaa
+    global heratys  # Tämä tarvitaan, jotta voidaan muokata globaalia muuttujaa
     aika = request.form.get('aika')
     teksti = request.form.get('teksti')
 
